@@ -1,0 +1,42 @@
+<div class="row  overflow-hidden h-100">
+    <ng-container *ngIf="cart else cartEmpty;">
+    <div class="col-7  overflow-auto h-100">
+        <div  *ngFor="let product of cart">
+            <app-product-card [product]="product" (quantityUpdated)="updateCart($event)"></app-product-card>
+
+        </div>
+    </div>
+    <div class="col-5 d-flex flex-column align-items-center justify-content-center">
+        <div *ngIf="total">Subtotal({{total.quantity}} Items): {{total.price}}</div>
+        <button (click)="openModal()" class="btn btn-primary">Proceed to Buy</button>
+    </div>
+</ng-container>
+<ng-template #cartEmpty>
+<div class="col-12  d-flex align-items-center justify-content-center"><h2>Cart is empty</h2>
+</div>
+</ng-template>
+
+</div>
+
+<modal #loginForm>
+    <modal-header></modal-header>
+    <modal-content>
+        <div class="d-flex justify-content-center align-items-center">  <label class="mr-1"for="user">User : </label>
+            <input #userName id="user" type="text">
+        </div>
+    </modal-content>
+    <modal-footer>
+        <button class="btn btn-primary" (click)="closeModal(userName.value)">LogIn</button>
+    </modal-footer>
+</modal>
+
+<modal #confirmOrder>
+    <modal-header></modal-header>
+    <modal-content>
+        <div class="d-flex justify-content-center align-items-center"> 
+            <button class="btn btn-primary"  (click)="completeOrder()">Confirm Order</button>
+        </div>
+    </modal-content>
+    <modal-footer>
+    </modal-footer>
+</modal>

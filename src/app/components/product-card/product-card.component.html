@@ -1,0 +1,15 @@
+<div class="product-card my-3">
+    <img [src]="product.image" width="100px" height="100px">
+    <div class="product-title">{{product.title}}</div>
+    <div class="product-footer mt-2">
+     <div class="product-price">{{product.price}}</div>   
+    <button *ngIf="!product.quantity  else incrementButton;" (click)="change(1, product)"  class="btn btn-primary cart-button">Add</button>
+    <ng-template #incrementButton>
+    <ngx-number-spinner
+    [value]="product.quantity||0"
+    (change)="change($event, product)" 
+    [min]="0">
+    </ngx-number-spinner>
+    </ng-template>
+</div>
+</div>

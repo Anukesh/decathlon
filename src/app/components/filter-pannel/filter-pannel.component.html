@@ -1,0 +1,20 @@
+<h3>Filters</h3>
+
+<p>
+  <button (click)="toggleCollapse()" class="btn bg-transparent" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+   <span [ngClass]="{'arrow-down': !isCollapsed,  'arrow-up': isCollapsed}">Categories</span>
+   <span class="glyphicon glyphicon-menu-down"></span>
+  </button>
+  <span class="glyphicon glyphicon-menu-down"></span>
+</p>
+<div id="collapse" *ngIf="isCollapsed" >
+  <div *ngIf="categories">
+    <div class="form-check" *ngFor="let category of categories">
+        <input class="form-check-input" type="checkbox" value="" [id]="category" (change)="filterCategoris()">
+        <label class="form-check-label" for="category">
+          {{category}}
+        </label>
+      </div>
+    </div>
+      
+</div>

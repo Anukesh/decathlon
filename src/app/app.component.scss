@@ -1,0 +1,17 @@
+.shopping-cards{
+    border: 1px solid black;
+    height: 30px;
+}
+
+.container-fluid{
+    height: 100vh;
+    overflow: hidden;
+}
+
+.user-details{
+    width: 180px;
+    height: 100px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
