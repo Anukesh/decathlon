@@ -1,44 +1,47 @@
-.product-card{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+.product-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  &--loading {
+    height: 172px;
+    border-radius: 4px;
+  }
 }
 
-.product-title{
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    overflow: hidden;
-    width: 88%;
-    // &:hover{
-    //     overflow: visible; 
-    //     white-space: normal;
-    //     height:auto;  /* just added this line */
-    // }
+.product-title {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 88%;
+  // &:hover{
+  //     overflow: visible;
+  //     white-space: normal;
+  //     height:auto;  /* just added this line */
+  // }
 }
 
-.product-footer{
-    display: flex;
-    justify-content: space-between;
-    width: 88%;
-    align-items: flex-end;
+.product-footer {
+  display: flex;
+  justify-content: space-between;
+  width: 88%;
+  align-items: flex-end;
 }
 
-.product-price{
-    &::after{
-        content: '\20B9';
-    }
+.product-price {
+  &::after {
+    content: "\20B9";
+  }
 }
 
-.cart-button{
-    height: 40px;
-    &::before{
-        content: '\1F6D2';
-    }
+.cart-button {
+  height: 40px;
+  &::before {
+    content: "\1F6D2";
+  }
 }
 
-ngx-number-spinner ::ng-deep .horizontal-wrapper{
-    height: 40px;
+ngx-number-spinner ::ng-deep .horizontal-wrapper {
+  height: 40px;
 }
-
-

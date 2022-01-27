@@ -4,21 +4,20 @@ import { Product } from 'src/app/common/types/product';
 @Component({
   selector: 'app-product-card',
   templateUrl: './product-card.component.html',
-  styleUrls: ['./product-card.component.scss']
+  styleUrls: ['./product-card.component.scss'],
 })
 export class ProductCardComponent implements OnInit {
   @Input()
   product!: Product;
+  @Input() loading!: boolean;
   @Output()
-  quantityUpdated: EventEmitter<any> =  new EventEmitter();
+  quantityUpdated: EventEmitter<any> = new EventEmitter();
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit(): void {
+  ngOnInit(): void {}
+
+  change(e: any, product: Product) {
+    this.quantityUpdated.emit({ ...product, quantity: e });
   }
-
-  change(e:any, product: Product){
-    this.quantityUpdated.emit({...product, quantity:e});
-  }
-
 }
