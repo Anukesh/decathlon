@@ -4,7 +4,7 @@
     <div class='col-auto'>
         <button *ngIf="user else login;" class="btn bg-transparent" (click)="toggleCollapse()" class="btn bg-transparent" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">{{user}}</button>
 
-        <div id="collapse" *ngIf="isCollapsed"  class="position-absolute card user-details">
+        <div id="collapse" *ngIf="isCollapsed"  class="position-absolute card user-details" style="right: 0">
             <div>Orders({{orders}})</div>
             <div>
             <button  (click)="logOff()" *ngIf="user else login;" class="btn btn-primary">Log Off</button>
