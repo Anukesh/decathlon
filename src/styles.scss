@@ -1,3 +1,27 @@
 /* You can add global styles to this file, and also import other style files */
-@import "~bootstrap/dist/css/bootstrap.css"
+@import "~bootstrap/dist/css/bootstrap.css";
 
+//--------> SCROLL BAR
+
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(255, 255, 255, 0.2);
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.2);
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 2px;
+  z-index: 999999;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 2px;
+  background: #70a9fe;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+@media only screen and (max-width: 768px) {
+  ::-webkit-scrollbar {
+    width: 2px;
+  }
+}
