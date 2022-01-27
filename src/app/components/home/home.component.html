@@ -1,11 +1,28 @@
+<div class="row overflow-hidden h-100" style="max-height: calc(100vh - 86px)">
+  <div class="col-sm-3 col-md-3 col-xs-3 border-right border-primary">
+    <app-filter-pannel></app-filter-pannel>
+  </div>
 
-    <div class="row overflow-hidden h-100">
-      <div class="col-sm-3 col-md-3 col-xs-3 border-right border-primary">
-        <app-filter-pannel></app-filter-pannel>
+  <div class="col-sm-9 col-md-9 col-xs-9 overflow-auto h-100">
+    <div *ngIf="filteredProductList.length" class="row align-items-end h-100">
+      <div
+        *ngFor="let product of filteredProductList"
+        class="col-sm-4 col-md-4 col-xs-4 mb-3"
+      >
+        <app-product-card
+          [product]="product"
+          (quantityUpdated)="updateProductlist($event)"
+        ></app-product-card>
       </div>
-      <div class="col-sm-9 col-md-9 col-xs-9 row align-items-end overflow-scroll h-100">
-      <div *ngFor="let product of filteredProductList" class="col-sm-4 col-md-4 col-xs-4 mb-3">
-        <app-product-card [product]="product" (quantityUpdated)="updateProductlist($event)"></app-product-card>
-     </div>
     </div>
+
+    <div *ngIf="!filteredProductList.length" class="row overflow-auto h-100">
+      <div
+        *ngFor="let product of [1, 2, 3, 4, 5, 6, 7, 8, 9]"
+        class="col-sm-4 col-md-4 col-xs-4 mb-3"
+      >
+        <app-product-card [loading]="true"> </app-product-card>
+      </div>
     </div>
+  </div>
+</div>
